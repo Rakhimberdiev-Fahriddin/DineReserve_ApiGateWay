@@ -1,0 +1,1016 @@
+definitions:
+  auth_service.GetUserProfileResponse:
+    properties:
+      address:
+        type: string
+      date_of_birth:
+        type: string
+      fullname:
+        type: string
+      phone_number:
+        type: string
+      username:
+        type: string
+    type: object
+  auth_service.LogoutResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  auth_service.UpdateUserProfileRequest:
+    properties:
+      address:
+        type: string
+      date_of_birth:
+        type: string
+      fullName:
+        type: string
+      phone_number:
+        type: string
+      user_id:
+        type: string
+      username:
+        type: string
+    type: object
+  auth_service.UpdateUserProfileResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  payment_service.CreatePaymentRequest:
+    properties:
+      amount:
+        type: number
+      payment_method:
+        type: string
+      payment_status:
+        type: string
+      reservation_id:
+        type: string
+    type: object
+  payment_service.CreatePaymentResponse:
+    properties:
+      payment:
+        $ref: '#/definitions/payment_service.Payment'
+    type: object
+  payment_service.GetPaymentResponse:
+    properties:
+      payment:
+        $ref: '#/definitions/payment_service.Payment'
+    type: object
+  payment_service.Payment:
+    properties:
+      amount:
+        type: number
+      id:
+        type: string
+      payment_method:
+        type: string
+      payment_status:
+        type: string
+      reservation_id:
+        type: string
+    type: object
+  payment_service.UpdatePaymentRequest:
+    properties:
+      amount:
+        type: number
+      id:
+        type: string
+      payment_method:
+        type: string
+      payment_status:
+        type: string
+      reservation_id:
+        type: string
+    type: object
+  payment_service.UpdatePaymentResponse:
+    properties:
+      payment:
+        $ref: '#/definitions/payment_service.Payment'
+    type: object
+  reservation_service.CheckReservationRequest:
+    properties:
+      reservation_time:
+        type: string
+      restaurant_id:
+        type: string
+    type: object
+  reservation_service.CheckReservationResponse:
+    properties:
+      available:
+        type: boolean
+    type: object
+  reservation_service.CreateMenuItemRequest:
+    properties:
+      description:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      restaurant_id:
+        type: string
+    type: object
+  reservation_service.CreateReservationRequest:
+    properties:
+      reservation_time:
+        type: string
+      restaurant_id:
+        type: string
+      status:
+        type: string
+      user_id:
+        type: string
+    type: object
+  reservation_service.CreateReservationResponse:
+    properties:
+      reservation:
+        $ref: '#/definitions/reservation_service.Reservation'
+    type: object
+  reservation_service.CreateRestaurantRequest:
+    properties:
+      address:
+        type: string
+      description:
+        type: string
+      name:
+        type: string
+      phone_number:
+        type: string
+    type: object
+  reservation_service.CreateRestaurantResponse:
+    properties:
+      restaurant:
+        $ref: '#/definitions/reservation_service.Restaurant'
+    type: object
+  reservation_service.DeleteMenuItemResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  reservation_service.DeleteReservationResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  reservation_service.DeleteRestaurantResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  reservation_service.GetMenuItemResponse:
+    properties:
+      menu_item:
+        $ref: '#/definitions/reservation_service.MenuItem'
+    type: object
+  reservation_service.GetReservationResponse:
+    properties:
+      reservation:
+        $ref: '#/definitions/reservation_service.Reservation'
+    type: object
+  reservation_service.GetRestaurantResponse:
+    properties:
+      restaurant:
+        $ref: '#/definitions/reservation_service.Restaurant'
+    type: object
+  reservation_service.ListMenuItemsRequest:
+    properties:
+      limit:
+        type: integer
+      name:
+        type: string
+      offset:
+        type: integer
+      price:
+        type: number
+      restaurant_id:
+        type: string
+    type: object
+  reservation_service.ListReservationsResponse:
+    properties:
+      reservations:
+        items:
+          $ref: '#/definitions/reservation_service.Reservation'
+        type: array
+    type: object
+  reservation_service.MealOrder:
+    properties:
+      menu_item_id:
+        type: string
+      quantity:
+        type: integer
+    type: object
+  reservation_service.MenuItem:
+    properties:
+      description:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      restaurant_id:
+        type: string
+    type: object
+  reservation_service.OrderMealsRequest:
+    properties:
+      meals:
+        items:
+          $ref: '#/definitions/reservation_service.MealOrder'
+        type: array
+      reservation_id:
+        type: string
+    type: object
+  reservation_service.OrderMealsResponse:
+    properties:
+      status:
+        type: string
+    type: object
+  reservation_service.Reservation:
+    properties:
+      id:
+        type: string
+      reservation_time:
+        type: string
+      restaurant_id:
+        type: string
+      status:
+        type: string
+      user_id:
+        type: string
+    type: object
+  reservation_service.Restaurant:
+    properties:
+      address:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      phone_number:
+        type: string
+    type: object
+  reservation_service.UpdateMenuItemRequest:
+    properties:
+      description:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: number
+      restaurant_id:
+        type: string
+    type: object
+  reservation_service.UpdateMenuItemResponse:
+    properties:
+      menu_item:
+        $ref: '#/definitions/reservation_service.MenuItem'
+    type: object
+  reservation_service.UpdateReservationRequest:
+    properties:
+      id:
+        type: string
+      reservation_time:
+        type: string
+      restaurant_id:
+        type: string
+      status:
+        type: string
+      user_id:
+        type: string
+    type: object
+  reservation_service.UpdateReservationResponse:
+    properties:
+      reservation:
+        $ref: '#/definitions/reservation_service.Reservation'
+    type: object
+  reservation_service.UpdateRestaurantRequest:
+    properties:
+      address:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      phone_number:
+        type: string
+    type: object
+  reservation_service.UpdateRestaurantResponse:
+    properties:
+      restaurant:
+        $ref: '#/definitions/reservation_service.Restaurant'
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample server for API Gateway.
+  title: API Gateway
+  version: "1.0"
+paths:
+  /api/auth/logout/{user-id}:
+    post:
+      consumes:
+      - application/json
+      description: Logout the authenticated user
+      parameters:
+      - description: User ID
+        in: path
+        name: user-id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/auth_service.LogoutResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Logout User
+      tags:
+      - Auth
+  /api/auth/profile/{user-id}:
+    put:
+      consumes:
+      - application/json
+      description: Update the profile of the authenticated user
+      parameters:
+      - description: User ID
+        in: path
+        name: user-id
+        required: true
+        type: string
+      - description: Profile
+        in: body
+        name: profile
+        required: true
+        schema:
+          $ref: '#/definitions/auth_service.UpdateUserProfileRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/auth_service.UpdateUserProfileResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Update User Profile
+      tags:
+      - Auth
+  /api/auth/profile/{username}:
+    get:
+      consumes:
+      - application/json
+      description: Get profile of the authenticated user
+      parameters:
+      - description: Username
+        in: path
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/auth_service.GetUserProfileResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Get User Profile
+      tags:
+      - Auth
+  /api/menu:
+    get:
+      consumes:
+      - application/json
+      description: List all MenuItem
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.ListMenuItemsRequest'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: List MenuItem
+      tags:
+      - MenuItem
+    post:
+      consumes:
+      - application/json
+      description: Create a new MenuItem
+      parameters:
+      - description: Create MenuItem
+        in: body
+        name: MenuItem
+        required: true
+        schema:
+          $ref: '#/definitions/reservation_service.CreateMenuItemRequest'
+      produces:
+      - application/json
+      responses:
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Create MeniItem
+      tags:
+      - MenuItem
+  /api/menu/{menu-id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a specific MenuItem by ID
+      parameters:
+      - description: Menu ID
+        in: path
+        name: menu-id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.DeleteMenuItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Delete MenuItem
+      tags:
+      - MenuItem
+    get:
+      consumes:
+      - application/json
+      description: Get a specific MenuItem by ID
+      parameters:
+      - description: Menu ID
+        in: path
+        name: menu-id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.GetMenuItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Get MenuItem
+      tags:
+      - MenuItem
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Menu ID
+        in: path
+        name: menu-id
+        required: true
+        type: string
+      - description: Update MenuItem
+        in: body
+        name: Menu
+        required: true
+        schema:
+          $ref: '#/definitions/reservation_service.UpdateMenuItemRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.UpdateMenuItemResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Update MenuItem
+      tags:
+      - MenuItem
+  /api/payments/:
+    post:
+      consumes:
+      - application/json
+      description: Create a new payment record
+      parameters:
+      - description: Create Payment
+        in: body
+        name: Payment
+        required: true
+        schema:
+          $ref: '#/definitions/payment_service.CreatePaymentRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/payment_service.CreatePaymentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Create Payment
+      tags:
+      - Payment
+  /api/payments/{payment-id}:
+    get:
+      consumes:
+      - application/json
+      description: Get a payment record
+      parameters:
+      - description: payment-id
+        in: path
+        name: payment-id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/payment_service.GetPaymentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Get payment
+      tags:
+      - Payment
+    put:
+      consumes:
+      - application/json
+      description: Update the payment of record
+      parameters:
+      - description: Payment Id
+        in: path
+        name: payment-id
+        required: true
+        type: string
+      - description: Payment
+        in: body
+        name: profile
+        required: true
+        schema:
+          $ref: '#/definitions/payment_service.UpdatePaymentRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/payment_service.UpdatePaymentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Update Payment
+      tags:
+      - Payment
+  /api/reservations:
+    get:
+      consumes:
+      - application/json
+      description: List all reservations
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.ListReservationsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: List Reservations
+      tags:
+      - Reservation
+    post:
+      consumes:
+      - application/json
+      description: Create a new reservation
+      parameters:
+      - description: Create Reservation
+        in: body
+        name: Reservation
+        required: true
+        schema:
+          $ref: '#/definitions/reservation_service.CreateReservationRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.CreateReservationResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Create Reservation
+      tags:
+      - Reservation
+  /api/reservations/{reservation-id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a specific reservation by ID
+      parameters:
+      - description: Reservation ID
+        in: path
+        name: reservation-id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.DeleteReservationResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Delete Reservation
+      tags:
+      - Reservation
+    get:
+      consumes:
+      - application/json
+      description: Get a specific reservation by ID
+      parameters:
+      - description: Reservation ID
+        in: path
+        name: reservation-id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.GetReservationResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Get Reservation
+      tags:
+      - Reservation
+    put:
+      consumes:
+      - application/json
+      description: Update an existing reservation
+      parameters:
+      - description: Reservation ID
+        in: path
+        name: reservation-id
+        required: true
+        type: string
+      - description: Update Reservation
+        in: body
+        name: Reservation
+        required: true
+        schema:
+          $ref: '#/definitions/reservation_service.UpdateReservationRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.UpdateReservationResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Update Reservation
+      tags:
+      - Reservation
+  /api/reservations/check:
+    post:
+      consumes:
+      - application/json
+      description: Check the status of a reservation
+      parameters:
+      - description: Check Reservation
+        in: body
+        name: Check
+        required: true
+        schema:
+          $ref: '#/definitions/reservation_service.CheckReservationRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.CheckReservationResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Check Reservation
+      tags:
+      - Reservation
+  /api/reservations/order:
+    post:
+      consumes:
+      - application/json
+      description: Order meals for a reservation
+      parameters:
+      - description: Order Meals
+        in: body
+        name: Order
+        required: true
+        schema:
+          $ref: '#/definitions/reservation_service.OrderMealsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.OrderMealsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Order Meals
+      tags:
+      - Reservation
+  /api/restaurant:
+    get:
+      consumes:
+      - application/json
+      description: List all Restaurant
+      produces:
+      - application/json
+      responses:
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: List Restaurant
+      tags:
+      - Restaurant
+    post:
+      consumes:
+      - application/json
+      description: Create a new Restaurant
+      parameters:
+      - description: Create Restaurant
+        in: body
+        name: Restaurant
+        required: true
+        schema:
+          $ref: '#/definitions/reservation_service.CreateRestaurantRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.CreateRestaurantResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Create Reataurant
+      tags:
+      - Restaurant
+  /api/restaurant/{restaurant-id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a specific restaurant by ID
+      parameters:
+      - description: Restaurant ID
+        in: path
+        name: restaurant-id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.DeleteRestaurantResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Interval Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Delete Restaurant
+      tags:
+      - Restaurant
+    get:
+      consumes:
+      - application/json
+      description: Get Restaurant By ID
+      parameters:
+      - description: Restaurant ID
+        in: path
+        name: restaurant-id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.GetRestaurantResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Get Restaurant
+      tags:
+      - Restaurant
+  /api/restaurant{restaurant-id}:
+    put:
+      consumes:
+      - application/json
+      description: Update an existing restaurant
+      parameters:
+      - description: Restaurant ID
+        in: path
+        name: restaurant-id
+        required: true
+        type: string
+      - description: Update Restaurant
+        in: body
+        name: Restaurant
+        required: true
+        schema:
+          $ref: '#/definitions/reservation_service.UpdateRestaurantRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/reservation_service.UpdateRestaurantResponse'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      security:
+      - ApiKeyAuth: []
+      summary: Update Restaurant
+      tags:
+      - Restaurant
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

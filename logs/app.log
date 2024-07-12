@@ -1,0 +1,22 @@
+{"time":"2024-07-12T12:23:15.251982677+05:00","level":"INFO","msg":"Starting the application..."}
+{"time":"2024-07-12T12:23:15.252449678+05:00","level":"INFO","msg":"Server is running","PORT":":8080"}
+{"time":"2024-07-12T12:35:38.366902161+05:00","level":"INFO","msg":"Starting the application..."}
+{"time":"2024-07-12T12:35:38.367323053+05:00","level":"INFO","msg":"Server is running","PORT":":8080"}
+{"time":"2024-07-12T13:42:40.843415794+05:00","level":"INFO","msg":"Starting the application..."}
+{"time":"2024-07-12T13:42:40.844030653+05:00","level":"INFO","msg":"Server is running","PORT":":8080"}
+{"time":"2024-07-12T13:51:22.983567783+05:00","level":"INFO","msg":"Starting the application..."}
+{"time":"2024-07-12T13:51:22.984054664+05:00","level":"INFO","msg":"Server is running","PORT":":8080"}
+{"time":"2024-07-12T13:52:31.750429018+05:00","level":"INFO","msg":"Request received","method":"POST","path":"/api/restaurant"}
+{"time":"2024-07-12T13:52:31.750466834+05:00","level":"INFO","msg":"Response sent","status":404}
+{"time":"2024-07-12T13:56:46.795573029+05:00","level":"INFO","msg":"Starting the application..."}
+{"time":"2024-07-12T13:56:46.796038476+05:00","level":"INFO","msg":"Server is running","PORT":":8080"}
+{"time":"2024-07-12T13:57:36.791564077+05:00","level":"INFO","msg":"Request received","method":"POST","path":"/api/restaurant/"}
+{"time":"2024-07-12T13:57:36.791633952+05:00","level":"INFO","msg":"Handling CreateRestaurant request"}
+{"time":"2024-07-12T13:57:36.808010167+05:00","level":"INFO","msg":"Response sent","status":200}
+{"time":"2024-07-12T13:58:14.521861641+05:00","level":"INFO","msg":"Request received","method":"GET","path":"/api/restaurant/fab93925-45b7-4931-9e2b-38c397344c0b"}
+{"time":"2024-07-12T13:58:14.521904879+05:00","level":"INFO","msg":"Handling GetRestaurant request"}
+{"time":"2024-07-12T13:58:14.52671163+05:00","level":"INFO","msg":"Response sent","status":200}
+{"time":"2024-07-12T14:02:22.944409434+05:00","level":"INFO","msg":"Starting the application..."}
+{"time":"2024-07-12T14:02:22.944995155+05:00","level":"INFO","msg":"Server is running","PORT":":8080"}
+{"time":"2024-07-12T16:21:26.672049146+05:00","level":"INFO","msg":"Starting the application..."}
+{"time":"2024-07-12T16:21:26.673111294+05:00","level":"INFO","msg":"Server is running","PORT":":8080"}
